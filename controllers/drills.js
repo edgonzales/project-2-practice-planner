@@ -1,7 +1,8 @@
 const DrillModel = require("../models/drill");
 
 module.exports = {
-  index
+  index,
+  new: newDrill
 };
 
 async function index (req, res) {
@@ -16,3 +17,7 @@ async function index (req, res) {
         res.render(err);
     }
 }
+
+function newDrill(req, res) {
+    res.render("drills/new");
+  }
