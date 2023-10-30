@@ -49,3 +49,8 @@ body > main {
 .login img {
   height: 30px;
 }
+
+div > img {
+  width: 34px;
+  border-radius: 50%;
+}

@@ -19,12 +19,16 @@
                 </td>
                 <td>
                     Description: <%= drill.description %> <br>
-                </td>
+                </td> <br>
                 <td>
-                    Created By: <%= drill.userAvatar %>
-                    <%= drill.userName %> <br>
-                </td>
-            </tr> <br>
+                    <div>
+                        Created By: 
+                        <img src="<%= drill.userAvatar %>" alt="user-profile">
+                        <%= drill.userName %>
+
+                    </div>
+                </td> <br>
+            </tr>
         <% }) %>
     </tbody>
 </body>

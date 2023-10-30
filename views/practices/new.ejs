@@ -1,0 +1,28 @@
+<%- include('../partials/header') %>
+
+<body>
+    <h1>Add Practice!</h1>
+
+    <form id="new-form" action="/practices" method="POST">
+        <label>Name:</label>
+        <input type="text" name="name"> <br>
+        
+        <label>Date:</label>
+        <input type="datetime-local" name="date"> <br>
+
+        <label for="drills">Drills:</label>
+        <select name="drills" id="" multiple size = "4">
+            <% drillDocs.forEach(drill => { %>
+                <option value="<%= drill._id %>">
+                    <%= drill.name %>
+                </option>
+            <% }) %>
+        </select> <br>
+
+        <label>Description:</label>
+        <textarea name="description" id="description" cols="15" rows="2"></textarea> <br>
+        
+        <input type="submit" value="Add Practice">
+      </form>
+</body>
+</html>
