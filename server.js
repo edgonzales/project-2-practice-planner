@@ -11,6 +11,7 @@ const methodOverride = require('method-override');
 
 const indexRouter = require('./routes/index');
 const practicesRouter = require('./routes/practices');
+const drillsRouter = require('./routes/drills');
 
 
 // create the Express app
@@ -53,6 +54,7 @@ app.use(function (req, res, next) {
 
 // mount all routes with appropriate base paths
 app.use('/', indexRouter);
+app.use('/drills', drillsRouter);
 app.use('/practices', practicesRouter);
 
 

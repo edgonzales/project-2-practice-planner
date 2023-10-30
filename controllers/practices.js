@@ -7,7 +7,6 @@ module.exports = {
 };
 
 async function index (req, res) {
-    console.log(`You've reached the index practices controllers function!`);
     console.log(req.user);
     try {
         const practiceDocuments = await PracticeModel.find({});
