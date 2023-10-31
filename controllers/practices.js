@@ -12,9 +12,11 @@ module.exports = {
 async function index (req, res) {
     console.log(req.user);
     try {
-        const practiceDocuments = await PracticeModel.find({}).populate('drills');
-        console.log(practiceDocuments, '<------practice documents');
-        practiceDocuments.forEach( p => console.log(p.drills));
+        const practiceDocuments = await PracticeModel.find({}).populate('drills').exec();
+        console.log(practiceDocuments, '<------practice documents');        
+        practiceDocuments.forEach( function(p){ 
+          console.log('drills in practice ------->', p.drills);     
+        });
         res.render('practices/index.ejs', {practiceDocs: practiceDocuments});
         
     } catch (err) {
@@ -37,10 +39,7 @@ async function newPractice(req, res) {
     try {
         console.log(req.body);
         const practiceDoc = await PracticeModel.create(req.body);
-        // put it in the database, then respond client
-        // console.log(practiceDoc, " <0 this is the practice created in db");
-        res.redirect("/practices"); // < this will 404 currently because
-        // we haven't defined that route yet!
+        res.redirect("/practices"); 
       } catch (err) {
         console.log(err)
         res.send(err);

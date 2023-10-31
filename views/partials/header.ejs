@@ -18,8 +18,10 @@
       <a class="header-link"  href="/practices/">Practices</a>
             
       <a class="header-link"  href="/drills/">Drills</a>
+
+      <%= user.name %>
       
-      <a href="/logout">LOG OUT</a>
+      <a href="/logout"> | LOG OUT</a>
     
      <% } else { %>
       <a href="/auth/google" class="login"> LOG IN<img src="https://i.imgur.com/FHjYyi0.png" /> </a>

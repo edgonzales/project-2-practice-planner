@@ -3,6 +3,23 @@
 <body>
     <h1>All Practices!</h1>
 
+    <tbody>
+        <% practiceDocs.forEach(practice => { %>
+            <tr>
+                <td>
+                    <%= practice.name %> <br>
+                </td>
+                <td>
+                    <%= practice.date %> <br>
+                </td>
+                <% practice.drills.forEach(drill => { %>
+                 <%= drill.name %> <br>
+                <% }) %> <br>
+            </tr>
+        <% }) %>
+    </tbody>
+
+
     <a href="/practices/new/">Add Practice</a>
 
 </body>
