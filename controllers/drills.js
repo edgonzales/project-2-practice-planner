@@ -3,7 +3,8 @@ const DrillModel = require("../models/drill");
 module.exports = {
   index,
   new: newDrill,
-  create
+  create,
+  show
 };
 
 async function index (req, res) {
@@ -36,4 +37,19 @@ async function create(req, res) {
         console.log(err);
         next(err);
     }
+  }
+
+  async function show(req, res){
+    try {
+        // we want to replace all of the id's of the performers in movieDocuments cast array
+        // with the actual performer docs!
+        // .populate takes name of the key on the model that contains the id's
+        const drillDocument = await DrillModel.findById(req.params.id);
+        console.log('DRILL DOCUMENT ---->', drillDocument)
+        res.render("drills/show", { drill: drillDocument });
+
+      } catch(err){
+        console.log(err)
+        res.send(err)
+      }
   }

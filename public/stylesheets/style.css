@@ -1,7 +1,7 @@
 * {
   box-sizing: border-box;
-  font-family: Helvetica;
   color: #424748;
+  font: "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 body {

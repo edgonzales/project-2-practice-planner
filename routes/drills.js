@@ -6,6 +6,6 @@ const drillsCtrl = require('../controllers/drills')
 router.get('/', drillsCtrl.index);
 router.get('/new', drillsCtrl.new);
 router.post('/', drillsCtrl.create);
-// router.get('/:id', drillsCtrl.show);
+router.get('/:id', drillsCtrl.show);
 
 module.exports = router;

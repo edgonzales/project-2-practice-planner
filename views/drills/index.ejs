@@ -3,7 +3,7 @@
 <body>
     <h1>All drills!</h1>
 
-    <a href="/drills/new/">Add Drill</a>
+    <a href="/drills/new/">Add Drill</a><br>
 
     <tbody>
         <% drillDocs.forEach(drill => { %>
@@ -19,15 +19,10 @@
                 </td>
                 <td>
                     Description: <%= drill.description %> <br>
-                </td> <br>
+                </td>
                 <td>
-                    <div>
-                        Created By: 
-                        <img src="<%= drill.userAvatar %>" alt="user-profile">
-                        <%= drill.userName %>
-
-                    </div>
-                </td> <br>
+                    <a href="/drills/<%= drill._id %>">View Details</a>
+                </td><br> <br>
             </tr>
         <% }) %>
     </tbody>

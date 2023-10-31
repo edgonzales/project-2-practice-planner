@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+
+<body>
+    <h1>Drill Details!</h1>
+    <div>
+        Name: <%= drill.name %> <br>
+        Category: <%= drill.category %> <br>
+        Minutes: <%= drill.minutes %> <br>
+        Description: <%= drill.description %> <br>
+        Created By:
+        <img src="<%= drill.userAvatar %>" alt="user-profile">
+        <%= drill.userName %>
+    </div>   
+</body>
+</html>
