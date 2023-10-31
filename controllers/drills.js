@@ -4,7 +4,8 @@ module.exports = {
   index,
   new: newDrill,
   create,
-  show
+  show,
+  deleteDrill
 };
 
 async function index (req, res) {
@@ -41,9 +42,6 @@ async function create(req, res) {
 
   async function show(req, res){
     try {
-        // we want to replace all of the id's of the performers in movieDocuments cast array
-        // with the actual performer docs!
-        // .populate takes name of the key on the model that contains the id's
         const drillDocument = await DrillModel.findById(req.params.id);
         console.log('DRILL DOCUMENT ---->', drillDocument)
         res.render("drills/show", { drill: drillDocument });
@@ -53,3 +51,15 @@ async function create(req, res) {
         res.send(err)
       }
   }
+
+  async function deleteDrill(req, res) {
+	console.log(req.params)
+  try {
+    await DrillModel.findByIdAndDelete(req.params.id);
+	res.redirect("/drills")
+	
+  } catch (err) {
+    console.log(err);
+    res.send(err);
+  }
+}

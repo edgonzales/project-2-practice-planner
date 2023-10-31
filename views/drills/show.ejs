@@ -9,7 +9,12 @@
         Description: <%= drill.description %> <br>
         Created By:
         <img src="<%= drill.userAvatar %>" alt="user-profile">
-        <%= drill.userName %>
+        <%= drill.userName %> <br>
+
+        <form action="/drills/<%=drill._id%>?_method=DELETE" method="POST">
+            <button type="Submit">X</button>
+        </form>
+
     </div>   
 </body>
 </html>

@@ -7,5 +7,6 @@ router.get('/', drillsCtrl.index);
 router.get('/new', drillsCtrl.new);
 router.post('/', drillsCtrl.create);
 router.get('/:id', drillsCtrl.show);
+router.delete('/:id', drillsCtrl.deleteDrill);
 
 module.exports = router;
