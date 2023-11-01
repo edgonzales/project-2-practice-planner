@@ -6,6 +6,6 @@ const practicesCtrl = require('../controllers/practices')
 router.get('/', practicesCtrl.index);
 router.get('/new', practicesCtrl.new);
 router.post('/', practicesCtrl.create);
-// router.get('/:id', practicesCtrl.show);
+router.get('/:id', practicesCtrl.show);
 
 module.exports = router;

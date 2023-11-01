@@ -6,7 +6,8 @@ const DrillModel = require('../models/drill');
 module.exports = {
   index,
   new: newPractice,
-  create
+  create,
+  show
 };
 
 async function index (req, res) {
@@ -24,6 +25,19 @@ async function index (req, res) {
         res.render(err);
     }
 }
+
+async function show(req, res){
+  try {
+      const practiceDocument = await PracticeModel.findById(req.params.id);
+      console.log('practice DOCUMENT ---->', practiceDocument)
+      res.render("practices/show", { practice: practiceDocument });
+
+    } catch(err){
+      console.log(err)
+      res.send(err)
+    }
+}
+
 
 async function newPractice(req, res) {
     try {

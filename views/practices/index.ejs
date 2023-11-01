@@ -14,7 +14,10 @@
                 </td>
                 <% practice.drills.forEach(drill => { %>
                  <%= drill.name %> <br>
-                <% }) %> <br>
+                <% }) %>
+                <td>
+                    <a href="/practices/<%= practice._id %>">View Details</a>
+                </td><br>
             </tr>
         <% }) %>
     </tbody>

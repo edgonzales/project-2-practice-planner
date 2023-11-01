@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+<body>
+    <h1>Practice Details!</h1>
+    <div>
+        Name: <%= practice.name %> <br>
+        Date: <%= practice.date %> <br>
+        Description: <%= practice.description %> <br>
+        Created By:
+        <img src="<%= practice.userAvatar %>" alt="user-profile">
+        <%= practice.userName %> <br>
+
+        <form action="/practices/<%=practice._id%>?_method=DELETE" method="POST">
+            <button type="Submit">X</button>
+        </form>
+    </div>   
+</body>
+</html>

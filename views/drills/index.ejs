@@ -3,28 +3,28 @@
 <body>
     <h1>All drills!</h1>
 
-    <a href="/drills/new/">Add Drill</a><br>
-
+    
     <tbody>
         <% drillDocs.forEach(drill => { %>
-            <tr>
-                <td>
-                    Name: <%= drill.name %> <br>
-                </td>
-                <td>
-                    Category: <%= drill.category %> <br>
-                </td>
-                <td>
-                    Minutes: <%= drill.minutes %> <br>
-                </td>
-                <td>
-                    Description: <%= drill.description %> <br>
-                </td>
-                <td>
-                    <a href="/drills/<%= drill._id %>">View Details</a>
-                </td><br> <br>
-            </tr>
+        <tr>
+            <td>
+                Name: <%= drill.name %> <br>
+            </td>
+            <td>
+                Category: <%= drill.category %> <br>
+            </td>
+            <td>
+                Minutes: <%= drill.minutes %> <br>
+            </td>
+            <td>
+                Description: <%= drill.description %> <br>
+            </td>
+            <td>
+                <a href="/drills/<%= drill._id %>">View Details</a>
+            </td><br>
+        </tr>
         <% }) %>
-    </tbody>
+        </tbody>
+    <a href="/drills/new/">Add Drill</a><br>
 </body>
 </html>
