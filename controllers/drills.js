@@ -5,7 +5,8 @@ module.exports = {
   new: newDrill,
   create,
   show,
-  deleteDrill
+  deleteDrill,
+  editDrill
 };
 
 async function index (req, res) {
@@ -24,6 +25,10 @@ async function index (req, res) {
 function newDrill(req, res) {
     res.render("drills/new");
   }
+
+function editDrill(req, res) {
+  res.render('drills/edit')
+}
 
 async function create(req, res) {
     try {

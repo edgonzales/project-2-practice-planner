@@ -11,9 +11,11 @@
         <img src="<%= drill.userAvatar %>" alt="user-profile">
         <%= drill.userName %> <br>
 
+        <a href="/drills/<%= drill._id %>/edit">Edit</a>
+
         <form action="/drills/<%=drill._id%>?_method=DELETE" method="POST">
             <button type="Submit">X</button>
         </form>
-    </div>   
+    </div>
 </body>
 </html>

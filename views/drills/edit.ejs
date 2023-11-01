@@ -1,0 +1,27 @@
+<%- include('../partials/header') %>
+
+<body>
+    <h1>Update Drill!</h1>
+    <form id="new-form" action="/drills?_method=DELETE" method="POST">
+        <label>Name:</label>
+        <input type="text" name="name"> <br>
+        
+        <label>Category</label>
+        <select name="category">
+            <option value="Passing">Passing</option>
+            <option value="Shooting">Shooting</option>
+            <option value="Dribbling">Dribbling</option>
+            <option value="Goalkeeping">Goalkeeping</option>
+            <option value="Conditioning">Conditioning</option>
+        </select> <br>
+        
+        <label>Minutes:</label>
+        <input type="number" name="minutes"> <br>
+        
+        <label>Description:</label>
+        <textarea name="description" id="description" cols="15" rows="2"></textarea> <br>
+        
+        <input type="submit" value="Update">
+    </form>
+</body>
+</html>
