@@ -7,7 +7,8 @@ module.exports = {
   index,
   new: newPractice,
   create,
-  show
+  show,
+  deletePractice
 };
 
 async function index (req, res) {
@@ -60,4 +61,15 @@ async function newPractice(req, res) {
         // optionally
         //next(err);
       }
+  }
+
+  async function deletePractice(req, res) {
+    console.log(req.params)
+    try {
+      await PracticeModel.findByIdAndDelete(req.params.id);
+      res.redirect("/practices")
+    } catch (err) {
+      console.log(err);
+      res.send(err);
+    }
   }

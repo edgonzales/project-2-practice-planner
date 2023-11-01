@@ -7,5 +7,6 @@ router.get('/', practicesCtrl.index);
 router.get('/new', practicesCtrl.new);
 router.post('/', practicesCtrl.create);
 router.get('/:id', practicesCtrl.show);
+router.delete('/:id', practicesCtrl.deletePractice);
 
 module.exports = router;
