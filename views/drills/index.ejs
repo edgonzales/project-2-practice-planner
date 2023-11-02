@@ -2,29 +2,45 @@
 
 <body>
     <h1>All drills!</h1>
+    <% if(drillDocs.length) {%>
+        <h3>These are all the available drills.</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Minutes</th>
+                    <th>Description</th>
+                    <th>          </th>
+                </tr>
+            </thead>
+            <tbody>
+                <% drillDocs.forEach(drill => { %>
+                <tr>
+                    <td>
+                        <%= drill.name %>
+                    </td>
+                    <td>
+                        <%= drill.category %>
+                    </td>
+                    <td>
+                        <%= drill.minutes %>
+                    </td>
+                    <td>
+                        <%= drill.description %>
+                    </td>
+                    <td>
+                        <a href="/drills/<%= drill._id %>">Details</a>
+                    </td>
+                </tr>
+                <% }) %>
+                </tbody>
+        </table>
+    <% } else {%>
+        <h3>Hey, let's add a drill.</h3>
+    <% } %>
 
-    
-    <tbody>
-        <% drillDocs.forEach(drill => { %>
-        <tr>
-            <td>
-                Name: <%= drill.name %> <br>
-            </td>
-            <td>
-                Category: <%= drill.category %> <br>
-            </td>
-            <td>
-                Minutes: <%= drill.minutes %> <br>
-            </td>
-            <td>
-                Description: <%= drill.description %> <br>
-            </td>
-            <td>
-                <a href="/drills/<%= drill._id %>">View Details</a>
-            </td><br>
-        </tr>
-        <% }) %>
-        </tbody>
-    <a href="/drills/new/">Add Drill</a><br>
+   
+    <a href="/drills/new/">Add</a><br>
 </body>
 </html>

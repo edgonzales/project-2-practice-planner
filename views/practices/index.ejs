@@ -1,21 +1,29 @@
 <%- include('../partials/header') %>
 
-<body>
-    <h1>Hi Coach <%= `${user.name}` %>!</h1>
-    <h3>Here are upcoming practices:</h3>
+    <body>
+        <h1>Hi Coach <%= `${user.name}` %>!</h1>
+        
+        <% if(practiceDocs.length) {%>
+            <h3>Here are upcoming practices:</h3>
+        <% } else {%>
+            <h3>Let's get started by adding a practice.</h3>
+        <% } %>
 
-    <main class="practices-grid">
-        <article class="practice-grid">
-        <% practiceDocs.forEach(practice => { %>
-        <%= practice.name %> <br>
-        <%= practice.date %> <br>
-        <% practice.drills.forEach(drill => { %>
-        <%= drill.name %>
-        <% }) %>
-        <a href="/practices/<%= practice._id %>">View Details</a>
+        <main class="practices-grid">
+            <% practiceDocs.forEach(practice=> { %>
+                <article class="practice-grid">
+                <%= practice.name %> <br>
+                <%= practice.date.toLocaleString() %> <br>
+                <% practice.drills.forEach(drill=> { %>
+                <%= drill.name %> <br>
+                <% }) %>
+                <a href="/practices/<%= practice._id %>">View Details</a>
+                </article>
             <% }) %>
-        <a href="/practices/new/">Add</a>
-        </article>
-    </main>
-</body>
-</html>
+            <div>
+                <a href="/practices/new/">Add</a>
+            </div>
+        </main>
+    </body>
+
+    </html>

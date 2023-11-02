@@ -2,12 +2,13 @@
 
 <body>
     <h1>Practice Details!</h1>
+    <a href="/practices/">Back</a> <br>
     <div>
         Name: <%= practice.name %> <br>
         Date: <%= practice.date %> <br>
         Description: <%= practice.description %> <br>
         Created By:
-        <img src="<%= practice.userAvatar %>" alt="user-profile">
+        <img src="<%= practice.user.avatar %>" alt="user-profile">
         <%= practice.userName %> <br>
 
         <form action="/practices/<%=practice._id%>?_method=DELETE" method="POST">

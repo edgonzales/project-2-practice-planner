@@ -26,7 +26,9 @@ async function index (req, res) {
 
 async function show(req, res){
   try {
-      const practiceDocument = await PracticeModel.findById(req.params.id);
+      const practiceDocument = await PracticeModel.findById(req.params.id)
+        .populate('user');
+      console.log('practiceDocument:', practiceDocument);
       res.render("practices/show", { practice: practiceDocument });
     } catch(err){
       console.log(err)
@@ -47,6 +49,7 @@ async function newPractice(req, res) {
   async function create (req, res){
     try {
         console.log(req.body);
+        req.body.user = req.user;
         const practiceDoc = await PracticeModel.create(req.body);
         res.redirect("/practices"); 
       } catch (err) {
