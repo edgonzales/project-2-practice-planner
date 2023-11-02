@@ -6,7 +6,8 @@ module.exports = {
   create,
   show,
   deleteDrill,
-  editDrill
+  edit,
+  update
 };
 
 async function index (req, res) {
@@ -26,8 +27,9 @@ function newDrill(req, res) {
     res.render("drills/new");
   }
 
-function editDrill(req, res) {
-  res.render('drills/edit')
+async function edit(req, res) {
+  const drillDocument = await DrillModel.findById(req.params.id);
+  res.render('drills/edit', {drill: drillDocument});
 }
 
 async function create(req, res) {
@@ -67,4 +69,19 @@ async function create(req, res) {
     console.log(err);
     res.send(err);
   }
+}
+
+async function update (req, res) {
+  console.log('req.params--->', req.params);
+  try {
+    const updateDrill = await DrillModel.findByIdAndUpdate(
+      req.params.id,
+      req.body
+    )
+    res.redirect("/drills")
+  } catch (err) {
+    console.log(err);
+
+  }
+
 }
