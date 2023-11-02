@@ -4,13 +4,7 @@ const passport = require('passport');
 
 // The root route renders our only view
 router.get('/', function(req, res, next) {
-  //UPDATE THIS ==========================================================================
-  // Where do you want to go for the root route (this is localhost:3000)
-  // in the student demo this was res.redirect('/movies'), what do you want?
-  // This could be a landing page, or just redirect to your main resource page which you'll have an a tag that makes 
-  // a request to `/auth/google` route below
-  //===============================================================================================
-  res.render('index.ejs');
+res.render('index.ejs');
   
 });
 
@@ -29,8 +23,8 @@ console.log('oauth2callback is next----------')
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/practices', // UPDATE THIS, where do you want the client to go after you login 
-    failureRedirect : '/' //  UPDATE THIS, where do you want the client to go if login fails
+    successRedirect : '/practices', 
+    failureRedirect : '/'
   }
   ));
   console.log('oauth2callback has been called----------')

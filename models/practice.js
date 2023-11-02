@@ -11,5 +11,5 @@ const practiceSchema = new mongoose.Schema(
     description: String
   }
 );
-// THEN WE COMPILE THE SCHEMA INTO THE MODEL AND EXPORT IT to be used in the controllers!
+
 module.exports = mongoose.model("Practice", practiceSchema);
