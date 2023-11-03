@@ -29,3 +29,4 @@ Deploy the following user stories
 - As a Coach, I want to share a scheduled practice with a parent
 - As a Parent, I want to comment on a scheduled practice
 - As a Coach, I want to create a game day tactic
+- As a Coach, I want to use Practice Planner for other sports, other than soccer
