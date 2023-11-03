@@ -10,12 +10,13 @@ A CRUD app where soccer coaches can keep themselves organized by scheduling prac
 # Technologies Used
 
 - Express.js
-- HTML
-- CSS
 - Mongoose
 - MongoDB
 - Passport.js
 - Cyclic
+- ejs
+- HTML
+- CSS
 
 # Getting Started
 
