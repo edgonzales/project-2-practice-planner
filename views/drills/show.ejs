@@ -12,11 +12,13 @@
         <img class="user-profile-img" src="<%= drill.userAvatar %>" alt="user-profile">
         <%= drill.userName %> <br>
 
-        <a href="/drills/<%= drill._id %>/edit">Edit</a>
+        <% if(user && user._id.equals(drill.user)) {%>
+            <a href="/drills/<%= drill._id %>/edit">Edit</a>
 
-        <form action="/drills/<%=drill._id%>?_method=DELETE" method="POST">
-            <button type="Submit">Delete</button>
-        </form>
+            <form action="/drills/<%=drill._id%>?_method=DELETE" method="POST">
+                <button type="Submit">Delete</button>
+            </form>
+        <% } %>
     </div>
 </body>
 </html>

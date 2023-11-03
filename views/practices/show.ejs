@@ -11,10 +11,12 @@
 
         <!-- <img class="user-profile-img" src="<%= practice.user.avatar %>" alt="user-profile"> -->
 
-        <form action="/practices/<%=practice._id%>?_method=DELETE" method="POST">
-            <!-- <button type="Submit">Delete</button> -->
-            <input type="submit" value="Delete">
-        </form>
+        <% if(user && user._id.equals(practice.user.id)) {%>
+            <form action="/practices/<%=practice._id%>?_method=DELETE" method="POST">
+                <!-- <button type="Submit">Delete</button> -->
+                <input type="submit" value="Delete">
+            </form>
+        <% } %>
     </article>   
 </body>
 </html>

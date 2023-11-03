@@ -71,7 +71,7 @@ async function update (req, res) {
       req.params.id,
       req.body
     )
-    res.redirect("/drills")
+    res.redirect("/drills");
   } catch (err) {
     console.log(err);
   }
