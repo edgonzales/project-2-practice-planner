@@ -9,21 +9,19 @@
             <h3>Let's get started by adding a practice.</h3>
         <% } %>
 
-        <main class="practices-grid">
+        <main>
             <% practiceDocs.forEach(practice=> { %>
-                <article class="practice-grid">
-                <%= practice.name %> <br>
-                <%= practice.date.toLocaleString() %> <br>
-                <% practice.drills.forEach(drill=> { %>
-                <%= drill.name %> <br>
-                <% }) %>
-                <a href="/practices/<%= practice._id %>">View Details</a>
+                <article>
+                    <%= practice.name %> <br>
+                    <%= practice.date.toLocaleString() %> <br>
+                    <% practice.drills.forEach(drill=> { %>
+                    <%= drill.name %> <br>
+                    <% }) %>
+                    <a href="/practices/<%= practice._id %>">View Details</a>
                 </article>
-            <% }) %>
-            <div>
-                <a href="/practices/new/">Add</a>
-            </div>
+            <% }) %> <br>
         </main>
+        <a class="go-add-btn" href="/practices/new/">Go Add &#62;&#62;</a>
     </body>
 
     </html>

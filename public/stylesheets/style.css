@@ -58,13 +58,24 @@ body > main {
 }
 
 article {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(171, 171, 171);
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #eff6f4;
+  gap: 1em;
+  margin: 1em;
+  padding: 2rem;
+  /* display: grid;
   grid-auto-columns: 1fr;
   gap: 1em;
   padding: 2rem;
   background-color: greenyellow;
   border-style: solid;
+  margin: 1em; */
 }
+
 th {
   font-weight: bold;
 }
@@ -90,10 +101,10 @@ th, td {
   height: 30px;
 }
 
-/* div > img {
+.user-profile-img {
   width: 34px;
   border-radius: 50%;
-} */
+}
 
 .button {
   margin-top: 25px;
@@ -131,7 +142,6 @@ form label {
   border: none;
   margin-bottom: 4px;
 }
-
 
 form input[type='submit'] {
   background-color: #2cc0e5;

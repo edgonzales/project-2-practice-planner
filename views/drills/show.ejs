@@ -2,20 +2,20 @@
 
 <body>
     <h1>Drill Details!</h1>
-    <a href="/drills/">Back</a><br>
-    <div>
+    <a class="back-btn" href="/drills/">&#60;&#60; Back</a><br>
+    <div class="flex-card">
         Name: <%= drill.name %> <br>
         Category: <%= drill.category %> <br>
         Minutes: <%= drill.minutes %> <br>
         Description: <%= drill.description %> <br>
         Created By:
-        <img src="<%= drill.userAvatar %>" alt="user-profile">
+        <img class="user-profile-img" src="<%= drill.userAvatar %>" alt="user-profile">
         <%= drill.userName %> <br>
 
         <a href="/drills/<%= drill._id %>/edit">Edit</a>
 
         <form action="/drills/<%=drill._id%>?_method=DELETE" method="POST">
-            <button type="Submit">X</button>
+            <button type="Submit">Delete</button>
         </form>
     </div>
 </body>

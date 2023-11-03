@@ -2,6 +2,7 @@
 
 <body>
     <h1>Update Drill!</h1>
+    <a class="back-btn" href="/drills/">&#60;&#60; Back</a><br>
     <form id="new-form" action="/drills/<%=drill._id%>?_method=PUT" method="POST">
         <label>Name:</label>
         <input type="text" name="name" value="<%= drill.name %>"> <br>
@@ -22,7 +23,7 @@
         <label>Description:</label>
         <textarea name="description" id="description" cols="15" rows="2">
             <%= drill.description %>
-        </textarea> <br>          
+        </textarea> <br>
         <input type="submit" value="Update">
     </form>
 </body>

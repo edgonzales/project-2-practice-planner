@@ -2,17 +2,17 @@
 
 <body>
     <h1>Practice Details!</h1>
-    <a href="/practices/">Back</a> <br>
+    <a class="back-btn" href="/practices/">&#60;&#60; Back</a> <br>
     <div>
         Name: <%= practice.name %> <br>
-        Date: <%= practice.date %> <br>
+        Date: <%= practice.date.toLocaleString() %> <br>
         Description: <%= practice.description %> <br>
         Created By:
         <img src="<%= practice.user.avatar %>" alt="user-profile">
         <%= practice.userName %> <br>
 
         <form action="/practices/<%=practice._id%>?_method=DELETE" method="POST">
-            <button type="Submit">X</button>
+            <button type="Submit">Delete</button>
         </form>
     </div>   
 </body>
