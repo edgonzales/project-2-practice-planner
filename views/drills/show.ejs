@@ -3,22 +3,21 @@
 <body>
     <h1>Drill Details!</h1>
     <a class="back-btn" href="/drills/">&#60;&#60; Back</a><br>
-    <div class="flex-card">
+    <article class="flex-card">
         Name: <%= drill.name %> <br>
         Category: <%= drill.category %> <br>
         Minutes: <%= drill.minutes %> <br>
         Description: <%= drill.description %> <br>
-        Created By:
-        <img class="user-profile-img" src="<%= drill.userAvatar %>" alt="user-profile">
-        <%= drill.userName %> <br>
+        Created By: <%= drill.userName %> <br>
+        <!-- <img class="user-profile-img" src="<%= drill.userAvatar %>" alt="user-profile"> -->
 
         <% if(user && user._id.equals(drill.user)) {%>
-            <a href="/drills/<%= drill._id %>/edit">Edit</a>
+            <a id="edit-btn" href="/drills/<%= drill._id %>/edit">Edit</a>
 
             <form action="/drills/<%=drill._id%>?_method=DELETE" method="POST">
-                <button type="Submit">Delete</button>
+                <input type="submit" value="Delete">
             </form>
         <% } %>
-    </div>
+    </article>
 </body>
 </html>
