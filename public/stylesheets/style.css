@@ -57,11 +57,6 @@ body > main {
   overflow-y: scroll;
 }
 
-
-th {
-  font-weight: bold;
-}
-
 article {
   display: grid;
   grid-auto-columns: 1fr;
@@ -70,6 +65,20 @@ article {
   background-color: greenyellow;
   border-style: solid;
 }
+th {
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+th, td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
 
 #soccer-ball-background {
   max-width: 100%;
@@ -96,4 +105,38 @@ article {
 
 .button:hover{
   background-color: aqua;
+}
+
+select {
+  width: 100%;
+  padding: 4px 5px;
+  border-radius: 4px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(171, 171, 171);
+  padding: 16px;
+  border-radius: 8px;
+  background-color: #eff6f4;
+}
+
+form *{
+  width: 100%;
+  border: 1px solid rgb(171, 171, 171);
+}
+
+form label {
+  border: none;
+  margin-bottom: 4px;
+}
+
+
+form input[type='submit'] {
+  background-color: #2cc0e5;
+  padding: 8px;
+  font-weight: bold;
+  color: white;
+  border-radius: 8px;
 }
