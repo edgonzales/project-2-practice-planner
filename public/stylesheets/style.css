@@ -42,7 +42,7 @@ nav > a:hover{
   opacity: 0.5;
 }
 
-nav > img {
+nav > img, .user-profile-img {
   width: 34px;
   object-fit: contain;
 }
@@ -76,6 +76,24 @@ article {
   margin: 1em; */
 }
 
+article label {
+  border: none;
+  margin-bottom: 4px;
+}
+
+article form {
+  width: 100%;
+  border: none;
+}
+
+article form input[type='submit'] {
+  background-color: #e52c5d;
+  padding: 8px;
+  font-weight: bold;
+  color: white;
+  border-radius: 8px;
+}
+
 th {
   font-weight: bold;
 }
@@ -90,7 +108,6 @@ th, td {
   border-bottom: 1px solid #ddd;
 }
 
-
 #soccer-ball-background {
   max-width: 100%;
   max-height: 100%;
@@ -101,10 +118,10 @@ th, td {
   height: 30px;
 }
 
-.user-profile-img {
+/* .user-profile-img {
   width: 34px;
   border-radius: 50%;
-}
+} */
 
 .button {
   margin-top: 25px;
