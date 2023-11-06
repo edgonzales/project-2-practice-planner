@@ -16,7 +16,6 @@ async function index (req, res) {
         res.render('drills/index.ejs', {drillDocs: drillDocuments});
         
     } catch (err) {
-        console.log(err);
         res.render(err);
     }
 }
@@ -26,8 +25,12 @@ function newDrill(req, res) {
   }
 
 async function edit(req, res) {
-  const drillDocument = await DrillModel.findById(req.params.id);
-  res.render('drills/edit', {drill: drillDocument});
+  try {
+    const drillDocument = await DrillModel.findById(req.params.id);
+    res.render('drills/edit', {drill: drillDocument});
+  } catch (error) {
+    res.send(err)
+  }
 }
 
 async function create(req, res) {
@@ -38,7 +41,6 @@ async function create(req, res) {
         const drillDoc = await DrillModel.create(req.body);
         res.redirect("/drills");
     } catch (err) {
-        console.log(err);
         next(err);
     }
   }
@@ -48,24 +50,20 @@ async function create(req, res) {
         const drillDocument = await DrillModel.findById(req.params.id);
         res.render("drills/show", { drill: drillDocument });
       } catch(err){
-        console.log(err)
         res.send(err)
       }
   }
 
   async function deleteDrill(req, res) {
-	console.log(req.params)
   try {
     await DrillModel.findByIdAndDelete(req.params.id);
 	res.redirect("/drills")
   } catch (err) {
-    console.log(err);
     res.send(err);
   }
 }
 
 async function update (req, res) {
-  console.log('req.params--->', req.params);
   try {
     const updateDrill = await DrillModel.findByIdAndUpdate(
       req.params.id,
@@ -73,6 +71,6 @@ async function update (req, res) {
     )
     res.redirect("/drills");
   } catch (err) {
-    console.log(err);
+    res.send(err);
   }
 }

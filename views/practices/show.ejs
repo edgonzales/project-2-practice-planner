@@ -9,14 +9,13 @@
         Description: <%= practice.description %> <br>
         Created By: <%= practice.user.name %> <br>
 
-        <!-- <img class="user-profile-img" src="<%= practice.user.avatar %>" alt="user-profile"> -->
-
         <% if(user && user._id.equals(practice.user.id)) {%>
             <form action="/practices/<%=practice._id%>?_method=DELETE" method="POST">
                 <!-- <button type="Submit">Delete</button> -->
                 <input type="submit" value="Delete">
             </form>
         <% } %>
+        
     </article>   
 </body>
 </html>

@@ -9,7 +9,6 @@
         Minutes: <%= drill.minutes %> <br>
         Description: <%= drill.description %> <br>
         Created By: <%= drill.userName %> <br>
-        <!-- <img class="user-profile-img" src="<%= drill.userAvatar %>" alt="user-profile"> -->
 
         <% if(user && user._id.equals(drill.user)) {%>
             <a id="edit-btn" href="/drills/<%= drill._id %>/edit">Edit</a>
